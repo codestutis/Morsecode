@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) {
         Map<Character, int[]> morseCodeMap = new HashMap<>();
 
-        int dot = 50;
-        int dash = 150;
+        int unit_length = 50;
+        int dot = unit_length ;
+        int dash = 3 * unit_length;
         morseCodeMap.put('A', new int[]{dot, dash});
         morseCodeMap.put('B', new int[]{dash, dot, dot, dot});
         morseCodeMap.put('C', new int[]{dash, dot, dash, dot});
@@ -48,19 +49,19 @@ public class Main {
                 for (int num: code) {
                     Beep.beep(num);
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(unit_length);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 try {
-                    Thread.sleep(150);
+                    Thread.sleep(3 * unit_length);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             try {
-                Thread.sleep(350);
+                Thread.sleep(7 * unit_length);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
